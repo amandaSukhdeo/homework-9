@@ -40,12 +40,12 @@
                 $.ajax({
                     url: `http://localhost:8888/posts/${id}`,
                     type: "GET",
-                    dataType: "json",
+                    dataType: "text",
                     success: function (data) {
-                        const post = data[0]
-                        $('#title').val(post.title)
-                        $('#description').val(post.description)
-
+                        const jsonData = data.substring(data.indexOf("["));
+                        const post = JSON.parse(jsonData)[0];
+                        $('#title').val(post.title);
+                        $('#description').val(post.description);
                     }
                 });
 
@@ -94,8 +94,6 @@
                 })
 
             })
-
-
         </script>
 
     </body>

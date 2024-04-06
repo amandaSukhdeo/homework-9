@@ -78,7 +78,6 @@ class PostController
             http_response_code(404);
             exit();
         }
-
         //no built-in super global for PUT
         parse_str(file_get_contents('php://input'), $_PUT);
 
@@ -141,7 +140,7 @@ class PostController
         exit();
     }
 
-    public function postsUpdateView() {
+    public function postsUpdateView() { 
         include '../public/assets/views/post/posts-update.html';
         exit();
     }
