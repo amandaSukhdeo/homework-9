@@ -48,6 +48,7 @@ class PostController
         } else {
             $posts = $postModel->getAllPosts(); 
         }
+        echo json_encode($posts);
         exit();
     }
 
@@ -88,12 +89,12 @@ class PostController
         $postData = $this->validatePost($inputData);
 
         //TODO 5-c: update a post
-        $user = new Post();
-        $user->updatePost(
+        $post = new Post();
+        $post->updatePost(
             [
                 'id' => $id, 
                 'title' => $postData['title'],
-                'lastName' => $postData['description'],
+                'description' => $postData['description'],
             ]
         );
 

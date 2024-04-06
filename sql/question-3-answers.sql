@@ -12,8 +12,8 @@ insert into posts (title, description) values ('test post title 3', 'test post d
 insert into posts (title, description) values ('test post title 4', 'test post description 4');
 insert into posts (title, description) values ('test post title 5', 'test post description 5');
 
--- update posts where id = 1, set the title to "new title"
-UPDATE `posts` SET `title`='new title' WHERE id=1; 
+-- update posts where id = 1, set the title to "Updated Post"
+update `posts` set `title`='Updated Post' where id=1; 
 
 -- delete post where id = 2
-DELETE FROM `posts` WHERE id=2; 
+delete from `posts` where id=2; 
