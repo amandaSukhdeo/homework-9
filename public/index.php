@@ -20,7 +20,6 @@ $uriArray = explode("/", $uri);
 //get all or a single post
 if ($uriArray[1] === 'posts' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $id = isset($uriArray[2]) ? intval($uriArray[2]) : null;
-    echo($id); 
     $postController = new PostController();
     $postController->getPosts($id);
 }
